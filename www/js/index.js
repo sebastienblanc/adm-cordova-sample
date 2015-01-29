@@ -17,20 +17,18 @@ function handleNotification(e) {
     if(e.event == "registered"){
         if(e.regid.length > 0){
             log("REGISTRATION ID:  <br>" + e.regid);
-            log("<a href=\"mailto:?subject=ADM%20Registration%20ID&body=" + encodeURIComponent(e.regid) + "\">Email Registration ID</a>");
-             //let's register to UPS
-
+           
 
        var client = AeroGear.UnifiedPushClient(
-            "3343b745-785d-4141-9cc4-a61e46be4884",
-            "7596f3ac-f275-4e94-a595-96e476d21e6f",
-            "http://192.168.1.19:8080/ag-push"
+            "<variantID>",
+            "<variantSecret>",
+            "<UPS url>"
         );
 
         // assemble the metadata for the registration:
         var metadata = {
             deviceToken: e.regid,
-            alias: "sebiups"
+            alias: "sebi"
         };
 
         var settings = {};
